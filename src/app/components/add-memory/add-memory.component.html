@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card card-header">
+    <h2>Add Memory</h2>
+  </div>
+  <div class="card card-body">
+    <form (ngSubmit)="onSubmit()">
+      <div class="form-group">
+        <input type="text" class="form-control" name="caption" placeholder="Add Caption"
+          [(ngModel)]="memory.caption"
+        >
+      </div>
+      <input type="submit" value="Add Memory">
+    </form>
+  </div>
+</div>
