@@ -14,8 +14,8 @@ export class WallComponent implements OnInit {
   constructor(private memoryService: MemoryService) { }
 
   ngOnInit() {
-    this.memoryService.getMemories().subscribe(memories => {
-      this.memories = memories;
+    this.memoryService.getMemories().subscribe(result => {
+      this.memories = result.memories;
     });
   }
 
