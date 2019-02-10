@@ -1,3 +1,4 @@
 <div *ngFor="let memory of memories" class="card card-body">
   {{memory.caption}}
+  <img [src]="memory.imagePath" style="width: 100%">
 </div>

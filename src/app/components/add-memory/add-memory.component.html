@@ -3,13 +3,16 @@
     <h2>Add Memory</h2>
   </div>
   <div class="card card-body">
-    <form (ngSubmit)="onSubmit()">
+    <form [formGroup]="form">
       <div class="form-group">
-        <input type="text" class="form-control" name="caption" placeholder="Add Caption"
-          [(ngModel)]="memory.caption"
-        >
+        <input type="text" class="form-control" formControlName="caption" placeholder="Add Caption">
       </div>
-      <input type="submit" value="Add Memory">
+      <div class="form-group">
+        <button class="btn btn-dark" (click)="filePicker.click()">Pick Image</button>
+        <input hidden="true" type="file" #filePicker (change)="onImagePicked($event)">
+        <img *ngIf="imagePreview && imagePreview !== '' && form.get('image').valid" [src]="imagePreview" style="width: 100%">
+      </div>
+      <input type="submit" value="Add Memory" (click)="onSubmit()">
     </form>
   </div>
 </div>
